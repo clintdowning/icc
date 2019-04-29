@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Task Tracker v2.0</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+	<main>
+		<header>
+			<h1>Task Tracker</h1>
+			<p>v2.0</p>
+		</header>
+		<section>
+			<article>
+				<h2>Create a Task</h2>
+				<form>
+					<label>Task Name</label>
+					<input type="text" id="name"><br>
+					<label>Date</label>
+					<input type="date" id="date"><br>
+					<label>Assigned To</label>
+					<input type="text" id="assigned"><br>
+					<input type="button" id="submit" value="Submit">
+				</form>
+			</article>
+			<aside>
+				<h2>Existing Tasks</h2>
+				<table>
+				</table>
+			</aside>
+		</section>
+	</main>
+	<script src="main.js"></script>
+</body>
+</html>
