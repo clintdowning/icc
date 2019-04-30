@@ -7,7 +7,7 @@ var json_data = [
 	{"name": "Test Task #5", "date": "12/05/2012", "assigned": "John Doe" },
 	{"name": "Test Task #6", "date": "12/06/2012", "assigned": "John Doe" },
 	{"name": "Test Task #7", "date": "12/07/2012", "assigned": "John Doe" }
-];
+]; 
 
 $.each(json_data, function(i, field){
 	add(field.name, field.date, field.assigned);
