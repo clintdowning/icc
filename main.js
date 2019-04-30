@@ -1,12 +1,25 @@
 
-$.getJSON("data.json", function(json) {  // Populate existing fields.
-	$.each(json, function(i, field){
-		add(field.name, field.date, field.assigned);
-	});
+var json_data = [
+	{"name": "Test Task #1", "date": "12/01/2012", "assigned": "John Doe" },
+	{"name": "Test Task #2", "date": "12/02/2012", "assigned": "John Doe" },
+	{"name": "Test Task #3", "date": "12/03/2012", "assigned": "John Doe" },
+	{"name": "Test Task #4", "date": "12/04/2012", "assigned": "John Doe" },
+	{"name": "Test Task #5", "date": "12/05/2012", "assigned": "John Doe" },
+	{"name": "Test Task #6", "date": "12/06/2012", "assigned": "John Doe" },
+	{"name": "Test Task #7", "date": "12/07/2012", "assigned": "John Doe" }
+];
+
+$.each(json_data, function(i, field){
+	add(field.name, field.date, field.assigned);
 });
 
 $("#submit").click(function(){  // Add entry on submit.
-	add($("#name").val(), formatDate($("#date").val()), $("#assigned").val());
+	if ( fieldsReady() ) {
+		$('#error').css("display","none");
+		add($("#name").val(), formatDate($("#date").val()), $("#assigned").val());
+	} else {
+		$('#error').css("display","block");
+	}
 });
 
 function add(name, date, assigned ){  // General add.
@@ -25,6 +38,10 @@ function formatDate ( date ) {  // Format date from date input field.
 	var day = date.substring(8,10);
 	var fixed_date = month + "/" + day + "/" + year;
 	return fixed_date;
+}
+
+function fieldsReady (  ) {
+	return $("#name").val() && $("#date").val() && $("#assigned").val();
 }
 
 var direction = 'left';
