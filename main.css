@@ -91,6 +91,21 @@ input[type=button] {
 	font-size: 18px;
 }
 
+#error {
+	display: none;
+	border: solid 1px red;
+	background-color: rgba(255,0,4,0.20);border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px 10px;
+	position: relative;
+	top: -28px;
+	margin-right: 3px;
+}
+
+#error p {
+	color: red;
+}
+
 aside {
 	padding: 30px 31px 25px 15px;
 	min-height: 400px;
